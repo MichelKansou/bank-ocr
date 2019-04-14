@@ -1,0 +1,27 @@
+{
+  "name": "bank-ocr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichelKansou/bank-ocr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichelKansou/bank-ocr/issues"
+  },
+  "homepage": "https://github.com/MichelKansou/bank-ocr#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "fs": "0.0.1-security",
+    "jest": "^24.7.1"
+  }
+}
