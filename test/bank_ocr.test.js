@@ -1,4 +1,4 @@
-import { readFile, getNumber } from '../bank_ocr';
+import { readFile, getNumber, convertToNumber } from '../bank_ocr';
 
 describe('Testing main functions', () => {
     test('readFile : Should read file and parse it to an array of lines' , async () => {
@@ -37,5 +37,9 @@ describe('Testing main functions', () => {
         expect(getNumber(' _ |_||_|')).toEqual(8);
         expect(getNumber(' _ |_| _|')).toEqual(9);
         expect(getNumber('     |  ')).toEqual('?');
+    });
+
+    test('convertToNumber : should receive path for a text file numbers', async () => {
+        expect(await convertToNumber('./use_case_1/text_all_numbers.txt')).toEqual('123456789');
     });
 })

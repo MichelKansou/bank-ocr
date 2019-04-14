@@ -73,3 +73,18 @@ export const getNumber = (input) => {
             return '?';
     }
 }
+
+export const convertToNumber = async (path) => {
+    console.log('====================================');
+    const arrayOfNumbers = await readFile(path);
+    var output = "";
+
+    arrayOfNumbers.forEach(charNumber => {
+        output += getNumber(charNumber);
+    });
+    
+    console.log("OUTPUT");
+    console.log(output);
+    console.log('====================================');
+    return output;
+}
