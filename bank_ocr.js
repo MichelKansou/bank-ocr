@@ -74,19 +74,24 @@ export const getNumber = (input) => {
     }
 }
 
-export const convertToNumber = async (path) => {
-    console.log('====================================');
+export const convertToNumber = async (path, verifyChecksum = false) => {
     const arrayOfNumbers = await readFile(path);
     var output = "";
+    var validNumber = true;
 
     arrayOfNumbers.forEach(charNumber => {
         output += getNumber(charNumber);
+
+        if (getNumber(charNumber) === '?' && verifyChecksum) {
+            validNumber = false;
+        }
     });
+
+    if (validNumber && verifyChecksum) {
+        output += checkSum(output.split('')) ? "" : " ERR";
+    } 
     
-    console.log("OUTPUT");
-    console.log(output);
-    console.log('====================================');
-    return output;
+    return !validNumber ? output + " ILL" : output;
 }
 
 //checksum calculation:
