@@ -25,4 +25,17 @@ describe('Testing main functions', () => {
 
         expect(error).toEqual(new Error("Require path in order to read file"));
     });
+
+    test('getNumber : should receive string of character and return a number or ?', () => {
+        expect(getNumber('     |  |')).toEqual(1);
+        expect(getNumber(' _  _||_ ')).toEqual(2);
+        expect(getNumber(' _  _| _|')).toEqual(3);
+        expect(getNumber('   |_|  |')).toEqual(4);
+        expect(getNumber(' _ |_  _|')).toEqual(5);
+        expect(getNumber(' _ |_ |_|')).toEqual(6);
+        expect(getNumber(' _   |  |')).toEqual(7);
+        expect(getNumber(' _ |_||_|')).toEqual(8);
+        expect(getNumber(' _ |_| _|')).toEqual(9);
+        expect(getNumber('     |  ')).toEqual('?');
+    });
 })
