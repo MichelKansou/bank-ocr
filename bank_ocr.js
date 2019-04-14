@@ -88,3 +88,14 @@ export const convertToNumber = async (path) => {
     console.log('====================================');
     return output;
 }
+
+//checksum calculation:
+//(d1+2*d2+3*d3 +..+9*d9) mod 11 = 0
+export const checkSum = (numbers) => {
+    var d10 = 0;
+    numbers.reverse().forEach((number, index) => {
+        d10 = d10 + (number * (index + 1));
+    });
+
+    return d10 % 11 === 0;
+}
