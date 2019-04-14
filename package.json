@@ -2,9 +2,12 @@
   "name": "bank-ocr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bank_ocr.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx babel-node bank_ocr",
+    "test-watch": "jest --watchAll",
+    "test": "jest",
+    "clear_jest": "jest --clearCache"
   },
   "repository": {
     "type": "git",
