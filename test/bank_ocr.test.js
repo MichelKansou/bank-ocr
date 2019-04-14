@@ -1,4 +1,4 @@
-import { readFile } from '../bank_ocr';
+import { readFile, getNumber } from '../bank_ocr';
 
 describe('Testing main functions', () => {
     test('readFile : Should read file and parse it to an array of lines' , async () => {
